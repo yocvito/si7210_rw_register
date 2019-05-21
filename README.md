@@ -34,7 +34,7 @@ gcc -o si7210_wr si721_wr.c
 
 ### Usage
 
-si7210_get.c :
+<b>si7210_get.c :</b>
 
 ```
 Usage:  ./i2cget -otp [register_addr]
@@ -100,7 +100,7 @@ data on 0xE3 : 0x00
 data on 0xE4 : 0x00
 ```
 
-si7210_set.c :
+<b>si7210_set.c :</b>
 
 Used only without arguments, this command allow you to write registers.
 
@@ -112,7 +112,7 @@ Register value for 0xC1 :
 
 ```
 
-si7210_wr.c :
+<b>si7210_wr.c :</b>
 
 Used with one argument : the register address
 
