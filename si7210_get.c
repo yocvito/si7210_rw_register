@@ -108,7 +108,7 @@ int main(int argc, char **argv)
 		{
 			if (read(file_i2c, &str, 1) != 1)
 			{
-				fprintf(stderr"Failed to read 0xE3.\n");
+				fprintf(stderr,"Failed to read 0xE3.\n");
 			}
 			else
 			{
