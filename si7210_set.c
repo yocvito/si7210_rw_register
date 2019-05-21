@@ -17,6 +17,28 @@ int addr = 0x31;
 
 char *end;
 char buf[12];
+int ibuff;
+
+static int wakeDevice()
+{
+	uint8_t null = 0;
+	if (write(file_i2c, &null, 1) != 1)		
+	{
+		return 0;
+	}
+    return 1;
+}
+
+static int asleepDevice()
+{
+    buffer[0] = 0xC4;
+	buffer[1] = 0x08;
+	if (write(file_i2c, &buffer, 2) != 2)		
+	{
+		return 0;
+	}
+    return 1;
+}
 
 int main(void)
 {
@@ -35,29 +57,29 @@ int main(void)
 		return EXIT_FAILURE;
 	}
 
-	int length = 0;
+	wakeDevice();
+
 	for( int i = 0xC0 ; i<0xE5 ; i++)
 	{
 		if( i < 0xD1 || i > 0xE0)
 		{
 			buffer[0] = i;
-			printf("Rgister value for 0x%02X : ",buffer[0]);
+			printf("Register value for 0x%02X : ",buffer[0]);
 			do {
-     				if (!fgets(buf, sizeof buf, stdin))
+     				if (!fgets(buf, sizeof(buf), stdin))
         				break;
-
-     				// remove \n
      				buf[strlen(buf) - 1] = 0;
-     				buffer[1] = (int)(strtol(buf, &end, 2)<<1);
+     				buffer[1] = (int)strtol(buf, &end, 2);
 			} while (end != buf + strlen(buf));
 			printf("\n");
-			length = 2;	
-			if (write(file_i2c, buffer, length) != length)		
+			if (write(file_i2c, &buffer, 2) != 2)		
 			{
 				printf("Failed to write to the i2c bus.\n");
 			}
 		}
 	}
+
+	asleepDevice();
 
 	close(file_i2c);
 	return EXIT_SUCCESS;
