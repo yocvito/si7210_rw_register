@@ -6,7 +6,7 @@ The 3 programs of this project allow to write and read in registers of hall effe
 
 We will not explain here the electronic part. We will show you just how to use the programs available to you.
 
-It is highly recommend to read the documentation at https://www.silabs.com/documents/public/data-sheets/si7210-datasheet.pdf brefore using this programs.
+It is highly recommend to read the documentation at https://www.silabs.com/documents/public/data-sheets/si7210-datasheet.pdf brefore using these programs.
 
 ### Prerequisites
 
