@@ -43,6 +43,11 @@ Usage:  ./i2cget -otp [register_addr]
 
 The argument -otp allow you to read a value in otp.
 ```
+Data on otp at address 0x05 : 0x12
+```
+
+The argument -pt displays registers and magnetic field value every 2 seconds.
+```
 data on 0xC0 : 0x14
 data on 0xC1 : 0xC0
 data on 0xC2 : 0x96
@@ -68,11 +73,6 @@ data on 0xE4 : 0x00
 (256 * Dspsigm[6:0] + Dspsigl[7:0] - 16384) * (0.00125 or 0.0125)
 (256 * 0 + 22 - 16384) * (0.00125) = 20.452499
 (256 * 0 + 22 - 16384) * (0.0125) = 204.524994
-```
-
-The argument -pt displays registers and magnetic field value every 2 seconds.
-```
-Data on otp at address 0x05 : 0x12
 ```
 
 With no argument, you just print one time the registers.
