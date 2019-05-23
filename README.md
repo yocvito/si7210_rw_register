@@ -37,8 +37,8 @@ gcc -o si7210_wr si7210_wr.c
 <b>si7210_get.c :</b>
 
 ```
-Usage:  ./i2cget -otp [register_addr]
-        ./i2cget -pt
+Usage:  ./si7210_get -otp [register_addr]
+        ./si7210_get -pt
 ```
 
 The argument -otp allow you to read a value in otp.
