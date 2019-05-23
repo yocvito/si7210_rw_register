@@ -27,9 +27,9 @@ git clone https://github.com/yocvito/si7210_rw_register.git
 Compile the c files
 
 ```
-gcc -o si7210_get si721_get.c
-gcc -o si7210_set si721_set.c
-gcc -o si7210_wr si721_wr.c
+gcc -o si7210_get si7210_get.c
+gcc -o si7210_set si7210_set.c
+gcc -o si7210_wr si7210_wr.c
 ```
 
 ### Usage
